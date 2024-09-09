@@ -20,8 +20,8 @@ rocket = { version = "0.5.1", features = ["json"] }
 
 [[bin]]
 name = "cli"
-path = "bin/cli.rs"
+path = "src/cli.rs"
 
 [[bin]]
 name = "web"
-path = "bin/web.rs"
+path = "src/web.rs"
