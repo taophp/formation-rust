@@ -21,10 +21,10 @@ L'objectif est créer une librairie qui permette d'évaluer des expressions math
 
 ### En option
 
-`24challenge`
+`generate_24_challenge`
 : renvoie un tableau de 4 chiffres comme défi pour le [jeu du 24](https://en.wikipedia.org/wiki/24_(puzzle))
 
-`24check`
+`check_24_challenge`
 : reçoit un objet JSON avec deux membres : un tableau de 4 chiffres et une expression mathématique résolvant le jeu du 24. Vérifie que l'expression résout bien le jeu du 24. Vérifie que l'expression ne contient que les 4 chiffres donnés dans le tableau, une seule fois chacun.
 
 ## Dépendances
