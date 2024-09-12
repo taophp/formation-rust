@@ -18,15 +18,15 @@ En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, i
 `calc`
 : évalue l'expression passée en argument avec meval ou, sinon, eval. Le résultat est renvoyé sur la sortie standard
 
-`are_equal`
+`equal`
 : vérifie si deux expressions sont égales, inférieures ou supérieures. Ne revoie rien si les expressions sont égales, error level 1 si la première est inférieure, error level 2 si la seconde est inférieure.
 
 ### En option
 
-`generate_24_challenge`
+`generate24`
 : renvoie sur la standard un list de 4 chiffres comme défi pour le [jeu du 24](https://en.wikipedia.org/wiki/24_(puzzle))
 
-`check_24_challenge`
+`check24`
 : reçoit un argument composé d'une liste de 4 chiffres séparés par des espaces sur la première ligne et une expression mathématique résolvant le jeu du 24 sur la seconde. Vérifie que l'expression ne contient que les 4 chiffres donnés dans le tableau, une seule fois chacun, sinon, renvoie l'error level 1. Vérifie que l'expression résout bien le jeu du 24, sinon renvoie l'error level 2.
 
 ## Dépendances
