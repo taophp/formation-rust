@@ -15,13 +15,13 @@ Concernant les error level supérieurs à 0 : à chaque fois qu'il s'en produit 
 3 commandes doivent être proposées :
 
 `check`
-: vérifie si l'argument est une expression évaluable avec meval ou eval, si nonnrenvoie un error level 1
+: vérifie si l'argument est une expression évaluable avec meval ou eval, si non renvoie un error level 1
 
 `calc`
 : évalue l'argument avec meval ou eval. Le résultat est renvoyé sur la sortie standard, un error level 1 si l'expression ne peut être évaluée
 
 `equal`
-: vérifie si deux arguments sont égaux. Ne revoie rien si les expressions sont égales, error level 1 si la première est inférieure, error level 2 si la seconde est inférieure.
+: vérifie si deux arguments sont égaux. Renvoie 1 si les expressions sont égales, error level 1 si la première est inférieure, error level 2 si la seconde est inférieure.
 
 ### En option
 
