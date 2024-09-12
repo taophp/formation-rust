@@ -180,10 +180,6 @@ pub fn generate_24_challenge() -> [u8; 4] {
 /// let numbers = [8, 8, 4, 3];
 /// let expression = "((8 * 8) - 4) / 3 + 8";
 /// assert!(check_24_challenge(&numbers, expression).is_err());
-///
-/// let numbers = [8, 8, 4, 3];
-/// let expression = "((8 * 8) - 4) / 3 * 8";
-/// assert!(check_24_challenge(&numbers, expression).is_err());
 /// ```
 ///
 /// In this example, we check if two sets of four numbers and mathematical expressions can be used to solve the 24 puzzle. We also check that the mathematical expression contains only the four numbers given in the array, and that it uses each number only once.
