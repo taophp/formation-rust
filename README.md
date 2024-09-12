@@ -10,6 +10,8 @@ L'objectif est créer application en ligne de commande qui permette d'évaluer d
 
 En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, il s'agit de fichiers ; s'ils sont absents, la commande lira le contenu de l'entrée standard pour trouver les données nécessaires au traitement.
 
+Concernant les error level supérieurs à 0 : à chaque fois qu'il s'en produit un, un message correspondant doit être envoyé vers la sortie d'erreur.
+
 3 commandes doivent être proposées :
 
 `check`
