@@ -24,7 +24,7 @@ En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, i
 ### En option
 
 `generate24`
-: renvoie sur la standard un list de 4 chiffres comme défi pour le [jeu du 24](https://en.wikipedia.org/wiki/24_(puzzle))
+: renvoie sur la sortie standard une liste de 4 chiffres comme défi pour le [jeu du 24](https://en.wikipedia.org/wiki/24_(puzzle))
 
 `check24`
 : reçoit un argument composé d'une liste de 4 chiffres séparés par des espaces sur la première ligne et une expression mathématique résolvant le jeu du 24 sur la seconde. Vérifie que l'expression ne contient que les 4 chiffres donnés dans le tableau, une seule fois chacun, sinon, renvoie l'error level 1. Vérifie que l'expression résout bien le jeu du 24, sinon renvoie l'error level 2.
