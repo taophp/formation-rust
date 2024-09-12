@@ -13,10 +13,10 @@ En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, i
 3 commandes doivent être proposées :
 
 `check`
-: vérifie si l'expression passée en argument peut-être évaluée avec meval ou, sinon, eval, renvoie un error level de 1 si l'expression ne peut être évaluée
+: vérifie si l'argument est une expression évaluable avec meval ou eval, si nonnrenvoie un error level 1
 
 `calc`
-: évalue l'expression passée en argument avec meval ou, sinon, eval. Le résultat est renvoyé sur la sortie standard
+: évalue l'expression passée en argument avec meval ou eval. Le résultat est renvoyé sur la sortie standard, un error level 1 si l'expression ne peut être évaluée
 
 `equal`
 : vérifie si deux expressions sont égales, inférieures ou supérieures. Ne revoie rien si les expressions sont égales, error level 1 si la première est inférieure, error level 2 si la seconde est inférieure.
