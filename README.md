@@ -19,7 +19,7 @@ En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, i
 : évalue l'expression passée en argument avec meval ou eval. Le résultat est renvoyé sur la sortie standard, un error level 1 si l'expression ne peut être évaluée
 
 `equal`
-: vérifie si deux expressions sont égales, inférieures ou supérieures. Ne revoie rien si les expressions sont égales, error level 1 si la première est inférieure, error level 2 si la seconde est inférieure.
+: vérifie si deux arguments sont égaux. Ne revoie rien si les expressions sont égales, error level 1 si la première est inférieure, error level 2 si la seconde est inférieure.
 
 ### En option
 
