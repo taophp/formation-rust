@@ -146,7 +146,7 @@ pub fn are_equal(expression1: &str, expression2: &str) -> Result<i8, CalcError> 
 /// In this example, we generate a random set of four numbers for the 24 puzzle and print the array containing the numbers.
 pub fn generate_24_challenge() -> [u8; 4] {
     let mut rng = thread_rng();
-    [rng.gen_range(1..=10), rng.gen_range(1..=10), rng.gen_range(1..=10), rng.gen_range(1..=10)]
+    [rng.gen_range(1..=9), rng.gen_range(1..=9), rng.gen_range(1..=9), rng.gen_range(1..=9)]
 }
 /// Checks if a set of four numbers and a mathematical expression can be used to solve the [24 puzzle](https://en.wikipedia.org/wiki/24_(puzzle))
 ///
