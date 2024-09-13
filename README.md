@@ -2,37 +2,33 @@
 
 I created this repository to serve as a training resource. It probably doesn't contain anything useful for you, unless you are one of the participants.
 
-# Calc-cli
+# Calc-web
 
-L'objectif est créer application en ligne de commande qui permette d'évaluer des expressions mathématiques.
+L'objectif est créer application web qui permette d'évaluer des expressions mathématiques.
 
 ## Sous-commandes à développer
 
-En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, il s'agit de fichiers ; s'ils sont absents, la commande lira le contenu de l'entrée standard pour trouver les données nécessaires au traitement.
+3 appels doivent être proposées :
 
-Concernant les error level supérieurs à 0 : à chaque fois qu'il s'en produit un, un message correspondant doit être envoyé vers la sortie d'erreur.
+`/check` en GET
+: vérifie si l'argument `arg` est une expression évaluable avec meval ou eval, si non renvoie une erreur 400
 
-3 commandes doivent être proposées :
+`/calc` en GET
+: évalue l'argument avec meval ou eval. Le résultat est renvoyé en html simple, si non renvoie une erreur 400
 
-`check`
-: vérifie si l'argument est une expression évaluable avec meval ou eval, si non renvoie un error level 1
-
-`calc`
-: évalue l'argument avec meval ou eval. Le résultat est renvoyé sur la sortie standard, un error level 1 si l'expression ne peut être évaluée
-
-`equal`
-: vérifie si deux expressions sont égales, une par ligne de l'argument. Renvoie 1 si les expressions sont égales, error level 1 si la première est inférieure, error level 2 si la seconde est inférieure.
+`/equal` en POST
+: reçoit un tableau d'expressions en JSON, vérifie si les deux premières expressions sont égales, une par ligne de l'argument. Renvoie `true` ou `false` en JSON
 
 ### En option
 
-`generate24`
-: renvoie sur la sortie standard une liste de 4 chiffres comme défi pour le [jeu du 24](https://en.wikipedia.org/wiki/24_(puzzle))
+`/generate24` en GET
+: renvoie un tableau JSON de 4 chiffres comme défi pour le [jeu du 24](https://en.wikipedia.org/wiki/24_(puzzle))
 
-`check24`
-: reçoit un argument composé d'une liste de 4 chiffres séparés par des espaces sur la première ligne et une expression mathématique résolvant le jeu du 24 sur la seconde. Vérifie que l'expression ne contient que les 4 chiffres donnés dans le tableau, une seule fois chacun, sinon, renvoie l'error level 1. Vérifie que l'expression résout bien le jeu du 24, sinon renvoie l'error level 2.
+`/check24` en POST
+: reçoit un tableau d'expressions en JSON ; la première est composée d'un tableau de 4 chiffres et la seconde, une expression mathématique résolvant le jeu du 24. Vérifie que l'expression ne contient que les 4 chiffres donnés dans le tableau, une seule fois chacun, sinon, renvoie une erreur 400. Vérifie que l'expression résout bien le jeu du 24, renvoie un statut 200 si oui, une erreur 404 si non.
 
 ## Dépendances
 - meval
 - eval
 - serde_json
-- clap
+- rocket
