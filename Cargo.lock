@@ -183,6 +183,7 @@ dependencies = [
  "meval",
  "rand",
  "rocket",
+ "serde",
  "serde_json",
 ]
 

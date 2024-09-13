@@ -78,7 +78,7 @@ fn main() {
 
           match input.lines().collect::<Vec<&str>>().as_slice() {
               [line1, line2, ..] => {
-                let numbers: Vec<u8> = input
+                let numbers: Vec<u8> = line1
                     .split_whitespace()
                     .filter_map(|s| s.parse::<u8>().ok())
                     .collect();

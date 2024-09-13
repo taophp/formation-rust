@@ -10,14 +10,14 @@ L'objectif est créer application web qui permette d'évaluer des expressions ma
 
 3 appels doivent être proposées :
 
-`/check` en GET
-: vérifie si l'argument `arg` est une expression évaluable avec meval ou eval, si non renvoie une erreur 400
+`/check?arg=` en GET
+: vérifie si l'argument `arg` est une expression évaluable avec meval ou eval, si oui, renvoie true en JSON, si non renvoie une erreur 400
 
-`/calc` en GET
+`/calc?arg=` en GET
 : évalue l'argument avec meval ou eval. Le résultat est renvoyé en html simple, si non renvoie une erreur 400
 
 `/equal` en POST
-: reçoit un tableau d'expressions en JSON, vérifie si les deux premières expressions sont égales, une par ligne de l'argument. Renvoie `true` ou `false` en JSON
+: reçoit un tableau d'expressions en JSON, vérifie si les deux premières expressions sont égales. Renvoie `true` ou `false` en JSON, une erreur 400 si les expressions sont invalides.
 
 ### En option
 
@@ -25,7 +25,7 @@ L'objectif est créer application web qui permette d'évaluer des expressions ma
 : renvoie un tableau JSON de 4 chiffres comme défi pour le [jeu du 24](https://en.wikipedia.org/wiki/24_(puzzle))
 
 `/check24` en POST
-: reçoit un tableau d'expressions en JSON ; la première est composée d'un tableau de 4 chiffres et la seconde, une expression mathématique résolvant le jeu du 24. Vérifie que l'expression ne contient que les 4 chiffres donnés dans le tableau, une seule fois chacun, sinon, renvoie une erreur 400. Vérifie que l'expression résout bien le jeu du 24, renvoie un statut 200 si oui, une erreur 404 si non.
+: reçoit un tableau de données en JSON ; la première est composée d'un tableau de 4 chiffres et la seconde, une expression mathématique résolvant le jeu du 24. Vérifie que l'expression ne contient que les 4 chiffres donnés dans le tableau, une seule fois chacun, sinon, renvoie une erreur 400. Vérifie que l'expression résout bien le jeu du 24, renvoie un statut 200 si oui, une erreur 404 si non.
 
 ## Dépendances
 - meval
