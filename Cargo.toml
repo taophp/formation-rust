@@ -14,3 +14,7 @@ serde_json = "1.0.128"
 [[bin]]
 name = "cli"
 path = "src/cli.rs"
+
+[[bin]]
+name = "web"
+path = "src/web.rs"
