@@ -8,6 +8,7 @@ clap = { version = "4.5.17", features = ["derive"] }
 eval = "0.4.3"
 meval = "0.2.0"
 rand = "0.8.5"
+rocket = { version = "0.5.1", features = ["json"] }
 serde_json = "1.0.128"
 
 [[bin]]
