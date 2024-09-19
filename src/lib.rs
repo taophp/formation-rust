@@ -81,9 +81,9 @@ pub enum TxtToCase {
 /// ```
 /// use txt::{to_case, TxtToCase};
 ///
-/// assert_eq!(to_case("Hello World", txtToCase::SnakeCase), "hello_world");
-/// assert_eq!(to_case("Hello World", txtToCase::CamelCase), "helloWorld");
-/// assert_eq!(to_case("Hello World", txtToCase::KebabCase), "hello-world");
+/// assert_eq!(to_case("Hello World", TxtToCase::SnakeCase), "hello_world");
+/// assert_eq!(to_case("Hello World", TxtToCase::CamelCase), "helloWorld");
+/// assert_eq!(to_case("Hello World", TxtToCase::KebabCase), "hello-world");
 /// ```
 pub fn to_case(s: &str, case: TxtToCase) -> String {
     let words: Vec<&str> = s.split_whitespace().collect();
