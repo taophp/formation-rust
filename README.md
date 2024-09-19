@@ -2,31 +2,34 @@
 
 I created this repository to serve as a training resource. It probably doesn't contain anything useful for you, unless you are one of the participants.
 
-# StringTools
+# Txt-cli
 
-L'objectif est de créer une librairie qui permette de manipuler des chaînes de caractères avec différentes transformations.
+L'objectif est de créer une application en ligne de commande qui permette de manipuler des chaînes de caractères avec différentes transformations.
 
-## Fonctions à développer
+## Sous-commandes à développer
 
-3 fonctions principales doivent être proposées :
+En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, il s'agit de fichiers ; s'ils sont absents, la commande lira le contenu de l'entrée standard pour trouver les données nécessaires au traitement.
+
+Concernant les error levels supérieurs à 0 : à chaque fois qu'il s'en produit un, un message correspondant doit être envoyé vers la sortie d'erreur.
+
+3 commandes doivent être proposées :
 
 `reverse`
-: renverse la chaîne de caractères passée en argument. Exemple : `"hello"` devient `"olleh"`.
+: renverse la chaîne de caractères passée en argument. Si l'argument est vide, renvoie un error level 1.
 
 `is_palindrome`
-: vérifie si la chaîne de caractères est un palindrome (se lit de la même manière dans les deux sens). Exemple : `"radar"` renvoie `true`, mais `"hello"` renvoie `false`.
+: vérifie si la chaîne de caractères passée en argument est un palindrome. Si l'argument est vide, renvoie un error level 1.
 
 `remove_vowels`
-: supprime toutes les voyelles (a, e, i, o, u) de la chaîne de caractères. Exemple : `"hello"` devient `"hll"`.
+: supprime toutes les voyelles (a, e, i, o, u) de la chaîne de caractères passée en argument. Si l'argument est vide, renvoie un error level 1.
 
 ### En option
 
 `rle_encode`
-: applique la compression par encodage Run-Length (RLE) à la chaîne de caractères passée en argument. Exemple : `"aaabbc"` devient `"a3b2c1"`.
+: applique la compression par encodage Run-Length (RLE) à la chaîne de caractères passée en argument. Si l'argument est vide, renvoie un error level 1.
 
 `to_case`
-: convertit une chaîne en fonction du format choisi parmi `snake_case`, `CamelCase` ou `kebab-case`. Exemple : `"Hello World"` devient `"hello_world"` (snake_case), `"helloWorld"` (CamelCase) ou `"hello-world"` (kebab-case), selon le paramètre passé.
+: convertit la chaîne passée en argument en `snake_case`, `CamelCase`, ou `kebab-case`. Le type de conversion est spécifié par une option. Si l'argument est vide, renvoie un error level 1. L'option par défaut est CamelCase.
 
 ## Dépendances
-
-Aucune dépendance externe n'est nécessaire pour cette librairie, tout est réalisé avec les fonctionnalités standard de Rust.
+- clap
