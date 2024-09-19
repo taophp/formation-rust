@@ -69,7 +69,7 @@ pub fn rle_encode(s: &str) -> String {
     encoded
 }
 
-pub enum txtToCase {
+pub enum TxtToCase {
     SnakeCase,
     CamelCase,
     KebabCase,
@@ -79,17 +79,17 @@ pub enum txtToCase {
 ///
 /// # Exemple
 /// ```
-/// use txt::{to_case, txtToCase};
+/// use txt::{to_case, TxtToCase};
 ///
 /// assert_eq!(to_case("Hello World", txtToCase::SnakeCase), "hello_world");
 /// assert_eq!(to_case("Hello World", txtToCase::CamelCase), "helloWorld");
 /// assert_eq!(to_case("Hello World", txtToCase::KebabCase), "hello-world");
 /// ```
-pub fn to_case(s: &str, case: txtToCase) -> String {
+pub fn to_case(s: &str, case: TxtToCase) -> String {
     let words: Vec<&str> = s.split_whitespace().collect();
     match case {
-        txtToCase::SnakeCase => words.join("_").to_lowercase(),
-        txtToCase::CamelCase => {
+        TxtToCase::SnakeCase => words.join("_").to_lowercase(),
+        TxtToCase::CamelCase => {
             let mut camel_case = String::new();
             for (i, word) in words.iter().enumerate() {
                 if i == 0 {
@@ -100,7 +100,7 @@ pub fn to_case(s: &str, case: txtToCase) -> String {
             }
             camel_case
         }
-        txtToCase::KebabCase => words.join("-").to_lowercase(),
+        TxtToCase::KebabCase => words.join("-").to_lowercase(),
     }
 }
 
