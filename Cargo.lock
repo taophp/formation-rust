@@ -256,6 +256,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "derive"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72e3ae26c830a573f2e231fc2475f71fce4705609097cb9523abfc4007caed0b"
+
+[[package]]
 name = "devise"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1442,7 +1448,9 @@ name = "txt"
 version = "0.1.0"
 dependencies = [
  "clap",
+ "derive",
  "rocket",
+ "serde",
  "serde_json",
 ]
 
