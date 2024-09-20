@@ -9,5 +9,9 @@ clap = { version = "4.0", features = ["derive"] }
 rocket = { version = "0.5.1", features = ["json"] }
 
 [[bin]]
-name = "stringtools"
+name = "cli"
 path = "src/cli.rs"
+
+[[bin]]
+name = "web"
+path = "src/web.rs"
