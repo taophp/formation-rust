@@ -2,34 +2,30 @@
 
 I created this repository to serve as a training resource. It probably doesn't contain anything useful for you, unless you are one of the participants.
 
-# Txt-cli
+# Txt-web
 
-L'objectif est de créer une application en ligne de commande qui permette de manipuler des chaînes de caractères avec différentes transformations.
+L'objectif est de créer une application web qui permette de manipuler des chaînes de caractères.
 
-## Sous-commandes à développer
+## Appels à développer
 
-En ce qui concerne les arguments : ils sont optionnels ; s'ils sont présents, il s'agit de fichiers ; s'ils sont absents, la commande lira le contenu de l'entrée standard pour trouver les données nécessaires au traitement.
+5 appels doivent être proposés :
 
-Concernant les error levels supérieurs à 0 : à chaque fois qu'il s'en produit un, un message correspondant doit être envoyé vers la sortie d'erreur.
+`/reverse?arg=` en GET
+: renvoie l'argument `arg` inversé. Si l'argument est absent ou vide, renvoie une erreur 400.
 
-3 commandes doivent être proposées :
+`/is_palindrome?arg=` en GET
+: vérifie si l'argument `arg` est un palindrome. Renvoie `true` ou `false` en JSON. Si l'argument est absent ou vide, renvoie une erreur 400.
 
-`reverse`
-: renverse la chaîne de caractères passée en argument. Si l'argument est vide, renvoie un error level 1.
+`/remove_vowels?arg=` en GET
+: renvoie l'argument `arg` avec toutes les voyelles supprimées. Si l'argument est absent ou vide, renvoie une erreur 400.
 
-`is_palindrome`
-: vérifie si la chaîne de caractères passée en argument est un palindrome. Si l'argument est vide, renvoie un error level 1.
+`/rle_encode?arg=` en GET
+: applique la compression Run-Length Encoding (RLE) à l'argument `arg`. Si l'argument est absent ou vide, renvoie une erreur 400.
 
-`remove_vowels`
-: supprime toutes les voyelles (a, e, i, o, u) de la chaîne de caractères passée en argument. Si l'argument est vide, renvoie un error level 1.
-
-### En option
-
-`rle_encode`
-: applique la compression par encodage Run-Length (RLE) à la chaîne de caractères passée en argument. Si l'argument est vide, renvoie un error level 1.
-
-`to_case`
-: convertit la chaîne passée en argument en `snake_case`, `CamelCase`, ou `kebab-case`. Le type de conversion est spécifié par une option. Si l'argument est vide, renvoie un error level 1. L'option par défaut est CamelCase.
+`/to_case` en POST
+: reçoit un objet JSON avec deux clés : `"text"` et `"case_type"` (valeurs possibles : `snake`, `camel`, `kebab`). Renvoie la chaîne formatée selon le `case_type`. Si `case_type` est invalide ou absent, renvoie une erreur 400.
 
 ## Dépendances
-- clap
+- rocket
+- serde
+- serde_json
